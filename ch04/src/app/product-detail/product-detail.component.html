@@ -1,12 +1,14 @@
-@if (product()) {
+@let selecetedProduct = product()!;
+@if (selecetedProduct) {
   <p>You selected:
-    <strong>{{product()!.title}}</strong>
+    <strong>{{selecetedProduct.title}}</strong>
   </p>
-  <p>{{product()!.price | currency:'EUR'}}</p>
+  <p>{{selecetedProduct.price | currency:'EUR'}}</p>
   <div class="pill-group">
-    @for (cat of product()!.categories | keyvalue; track cat.key) {
+    @for (cat of selecetedProduct.categories | keyvalue; track cat.key) {
       <p class="pill">{{cat.value | lowercase}}</p>
     }
-  </div>  
+  </div>
+  <input appNumeric />
   <button (click)="addToCart()">Add to cart</button>
 }

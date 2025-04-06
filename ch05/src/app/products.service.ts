@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
+@Injectable()
 export class ProductsService {
 
   constructor() { }
 
   getProducts(): Product[] {
     return [
-      { 
+      {
         id: 1,
         title: 'Keyboard',
         price: 100,
@@ -41,5 +42,5 @@ export class ProductsService {
         categories: { 4: 'Entertainment' }
       }
     ];
-  }  
+  }
 }
